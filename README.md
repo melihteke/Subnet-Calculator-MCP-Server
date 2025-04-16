@@ -68,5 +68,28 @@ Now the MCP server is activated:
 You can watch the video to demonstrate how to enable mcp server on Goose Client App:
 [![Watch the demo](https://img.youtube.com/vi/SZ-UcUz4_Bk/0.jpg)](https://www.youtube.com/shorts/SZ-UcUz4_Bk)
 
+
+
 ### Claude Desktop MCP Client
-This part will be added later.
+- Select Claude Desktop Settings
+- Select Developer and Edit config
+- Change claude_desktop_config.json content to below
+```sh
+{
+  "mcpServers": {
+    "mcp-subnet-calculator-sse": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "supergateway",
+        "--sse",
+        "https://mcp-subnet-calculator.mteke.com/sse"
+      ]
+    }
+  }
+}
+```
+- Close Claude Desktop App completely and restart it
+
+You can watch the video to demonstrate how to enable mcp server on Claude Desktop Client App:
+[![Watch the demo](https://img.youtube.com/vi/i7IEo-UfIcU/0.jpg)](https://www.youtube.com/i7IEo-UfIcU)
