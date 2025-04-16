@@ -1,0 +1,16 @@
+[04/16/25 11:47:31] INFO     Starting server "Subnet Calculator    server.py:171
+                             MCP Server"...                                     
+INFO:     Started server process [17429]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.178.150:53698 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:53700 - "POST /messages/?session_id=67ea6367087b4a18b6fb774d6a4c4d7b HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:53700 - "POST /messages/?session_id=67ea6367087b4a18b6fb774d6a4c4d7b HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:34766 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:34778 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:34778 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:32850 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:32866 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:35680 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:35680 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
