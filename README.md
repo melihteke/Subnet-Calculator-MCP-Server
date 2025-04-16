@@ -1,6 +1,6 @@
 # mcp-subnet-calculator
 
-This project provides a simple MCP (Micro Control Protocol) server for calculating subnet details based on a given CIDR (Classless Inter-Domain Routing) notation. It uses the FastMCP library to expose the subnet calculation functionality as a tool.
+This project provides a simple MCP (Model Context Protocol) server for calculating subnet details based on a given CIDR (Classless Inter-Domain Routing) notation. It uses the FastMCP library to expose the subnet calculation functionality as a tool.
 
 ## Features
 1. Calculate subnet details for a given CIDR.
