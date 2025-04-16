@@ -92,4 +92,4 @@ You can watch the video to demonstrate how to enable mcp server on Goose Client 
 - Close Claude Desktop App completely and restart it
 
 You can watch the video to demonstrate how to enable mcp server on Claude Desktop Client App:
-[![Watch the demo](https://img.youtube.com/vi/i7IEo-UfIcU/0.jpg)](https://www.youtube.com/i7IEo-UfIcU)
+[![Watch the demo](https://img.youtube.com/vi/i7IEo-UfIcU/0.jpg)](https://youtu.be/i7IEo-UfIcU)
