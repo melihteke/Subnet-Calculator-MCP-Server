@@ -20336,3 +20336,4 @@ Traceback (most recent call last):
   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 213, in send_nowait
     raise BrokenResourceError
 anyio.BrokenResourceError
+INFO:     192.168.178.150:40036 - "GET /sse HTTP/1.1" 200 OK
