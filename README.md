@@ -36,11 +36,11 @@ python main.py
 
 1. Goose MCP Client
 - Click Menu and select Advanced settings:
-![alt text](images/image.pngimage.png)
+![alt text](images/image.png)
 - Go extentions section
-![alt text](images/image-1.pngimage-1.png)
+![alt text](images/image-1.png)
 - Select "Add custom extentions"
-![alt text](images/image-2.pngimage-2.png)
+![alt text](images/image-2.png)
 
 
 2. Claude Desktop MCP Client
