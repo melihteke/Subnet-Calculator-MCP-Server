@@ -61,7 +61,7 @@ python main.py
 Now the MCP Server(extention is added and enabled)
 ![alt text](images/image-6.png)
 
-Now the MCP server is used:
+Now the MCP server is activated:
 ![alt text](images/image-7.png)
 
 ### Claude Desktop MCP Client
