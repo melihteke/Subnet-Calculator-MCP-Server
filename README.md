@@ -66,7 +66,7 @@ Now the MCP server is activated:
 
 
 You can watch the video to demonstrate how to enable mcp server on Goose Client App:
-![alt text](images/goose-client.mov)
+[Watch the demo](images/goose-client.mov)
 
 ### Claude Desktop MCP Client
 This part will be added later.
