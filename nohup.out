@@ -5124,3 +5124,360 @@ Traceback (most recent call last):
     raise BrokenResourceError
 anyio.BrokenResourceError
 INFO:     192.168.178.150:60380 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:60386 - "POST /messages/?session_id=91a8658b1c5c4a80bdaf6fb40963b52b HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:60392 - "POST /messages/?session_id=91a8658b1c5c4a80bdaf6fb40963b52b HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+  |     response = await f(request)
+  |                ^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 576, in handle_sse
+  |     async with sse.connect_sse(
+  |   File "/usr/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 123, in connect_sse
+  |     async with anyio.create_task_group() as tg:
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 131, in connect_sse
+    |     yield (read_stream, write_stream)
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 581, in handle_sse
+    |     await self._mcp_server.run(
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/lowlevel/server.py", line 483, in run
+    |     async with AsyncExitStack() as stack:
+    |   File "/usr/lib/python3.12/contextlib.py", line 754, in __aexit__
+    |     raise exc_details[1]
+    |   File "/usr/lib/python3.12/contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 210, in __aexit__
+    |     return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 324, in _receive_loop
+      |     await self._received_request(responder)
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/session.py", line 163, in _received_request
+      |     raise RuntimeError(
+      | RuntimeError: Received request before initialization was complete
+      +------------------------------------
+INFO:     192.168.178.150:60392 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:60386 - "POST /messages/?session_id=788ff1a61cba4ec0a633080398510f9a HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:60386 - "POST /messages/?session_id=788ff1a61cba4ec0a633080398510f9a HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:60386 - "POST /messages/?session_id=788ff1a61cba4ec0a633080398510f9a HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+  |     response = await f(request)
+  |                ^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 576, in handle_sse
+  |     async with sse.connect_sse(
+  |   File "/usr/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 123, in connect_sse
+  |     async with anyio.create_task_group() as tg:
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 131, in connect_sse
+    |     yield (read_stream, write_stream)
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 581, in handle_sse
+    |     await self._mcp_server.run(
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/lowlevel/server.py", line 483, in run
+    |     async with AsyncExitStack() as stack:
+    |   File "/usr/lib/python3.12/contextlib.py", line 754, in __aexit__
+    |     raise exc_details[1]
+    |   File "/usr/lib/python3.12/contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 210, in __aexit__
+    |     return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 324, in _receive_loop
+      |     await self._received_request(responder)
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/session.py", line 163, in _received_request
+      |     raise RuntimeError(
+      | RuntimeError: Received request before initialization was complete
+      +------------------------------------
+INFO:     192.168.178.150:60386 - "POST /messages/?session_id=788ff1a61cba4ec0a633080398510f9a HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 175, in handle_post_message
+    await writer.send(message)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 242, in send
+    self.send_nowait(item)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 213, in send_nowait
+    raise BrokenResourceError
+anyio.BrokenResourceError
+INFO:     192.168.178.150:58710 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:58722 - "POST /messages/?session_id=392ced0e1fb34bf4b7a5fe479c02df00 HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  |     raise exc
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+  |     response = await f(request)
+  |                ^^^^^^^^^^^^^^^^
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 576, in handle_sse
+  |     async with sse.connect_sse(
+  |   File "/usr/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 123, in connect_sse
+  |     async with anyio.create_task_group() as tg:
+  |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 131, in connect_sse
+    |     yield (read_stream, write_stream)
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/fastmcp/server/server.py", line 581, in handle_sse
+    |     await self._mcp_server.run(
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/lowlevel/server.py", line 483, in run
+    |     async with AsyncExitStack() as stack:
+    |   File "/usr/lib/python3.12/contextlib.py", line 754, in __aexit__
+    |     raise exc_details[1]
+    |   File "/usr/lib/python3.12/contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 210, in __aexit__
+    |     return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/shared/session.py", line 324, in _receive_loop
+      |     await self._received_request(responder)
+      |   File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/session.py", line 163, in _received_request
+      |     raise RuntimeError(
+      | RuntimeError: Received request before initialization was complete
+      +------------------------------------
+INFO:     192.168.178.150:58722 - "POST /messages/?session_id=392ced0e1fb34bf4b7a5fe479c02df00 HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 175, in handle_post_message
+    await writer.send(message)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 242, in send
+    self.send_nowait(item)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 213, in send_nowait
+    raise BrokenResourceError
+anyio.BrokenResourceError
+INFO:     192.168.178.150:58724 - "POST /messages/?session_id=392ced0e1fb34bf4b7a5fe479c02df00 HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 175, in handle_post_message
+    await writer.send(message)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 242, in send
+    self.send_nowait(item)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 213, in send_nowait
+    raise BrokenResourceError
+anyio.BrokenResourceError
+INFO:     192.168.178.150:58732 - "POST /messages/?session_id=392ced0e1fb34bf4b7a5fe479c02df00 HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/mcp/server/sse.py", line 175, in handle_post_message
+    await writer.send(message)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 242, in send
+    self.send_nowait(item)
+  File "/root/mcp-subnet-calculator/.venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 213, in send_nowait
+    raise BrokenResourceError
+anyio.BrokenResourceError
