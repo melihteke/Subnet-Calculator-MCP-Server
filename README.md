@@ -21,7 +21,7 @@ This project provides a simple MCP (Micro Control Protocol) server for calculati
 - Clone the repository or copy the script.
 - Install the required dependencies:
 ```sh
-pip install fastmcp
+pip install fastmcp mcp[cli]
 ```
 
 ## Usage
