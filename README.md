@@ -35,18 +35,35 @@ python main.py
 ## How to add this Server to your MCP Client
 
 ### Goose MCP Client
-- Click Menu and select Advanced settings:
+- Click Menu ("..." icon) and select Advanced settings:
 
 ![alt text](images/image.png)
 
-- Go extentions section
-
 ![alt text](images/image-1.png)
 
-- Select "Add custom extentions"
+- Go extentions section
 
 ![alt text](images/image-2.png)
 
+- Select "Add custom extentions"
+
+![alt text](images/image-3.png)
+
+![alt text](images/image-4.png)
+- Select Server-Sent Events as Type
+- Select a random ID
+- Select Name for the MCP Server
+- Sleect Description
+- Enter URI : https://mcp-subnet-calculator.mteke.com/sse
+- Click Add button
+
+![alt text](images/image-5.png)
+
+Now the MCP Server(extention is added and enabled)
+![alt text](images/image-6.png)
+
+Now the MCP server is used:
+![alt text](images/image-7.png)
 
 ### Claude Desktop MCP Client
 This part will be added later.
