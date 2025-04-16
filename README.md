@@ -92,4 +92,10 @@ You can watch the video to demonstrate how to enable mcp server on Goose Client 
 - Close Claude Desktop App completely and restart it
 
 You can watch the video to demonstrate how to enable mcp server on Claude Desktop Client App:
-[![Watch the demo](https://img.youtube.com/vi/i7IEo-UfIcU/0.jpg)](https://youtu.be/i7IEo-UfIcU)
+[![Watch the demo](https://img.youtube.com/vi/o2qw11WIHsA/0.jpg)](https://youtu.be/o2qw11WIHsA)
+
+How to add Subnet Calculator MCP Server to your Goose Client
+[![Watch the demo](https://img.youtube.com/vi/V-7QSZjYh0U/0.jpg)](https://youtu.be/V-7QSZjYh0U)
+
+How to add Subnet Calculator MCP Server to N8N Instance
+[![Watch the demo](https://img.youtube.com/vi/utFyDyKUIxg/0.jpg)](https://youtu.be/utFyDyKUIxg)
