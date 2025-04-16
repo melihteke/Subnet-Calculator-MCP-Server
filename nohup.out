@@ -14,3 +14,6 @@ INFO:     192.168.178.150:32850 - "POST /messages/?session_id=8a696ee7aa7a4db9bd
 INFO:     192.168.178.150:32866 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
 INFO:     192.168.178.150:35680 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
 INFO:     192.168.178.150:35680 - "POST /messages/?session_id=8a696ee7aa7a4db9bd6c293beff255d0 HTTP/1.1" 202 Accepted
+INFO:     192.168.178.150:55518 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:55534 - "GET /sse HTTP/1.1" 200 OK
+INFO:     192.168.178.150:58002 - "GET /robots.txt HTTP/1.1" 404 Not Found
