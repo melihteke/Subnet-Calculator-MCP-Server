@@ -49,7 +49,6 @@ python main.py
 
 ![alt text](images/image-3.png)
 
-![alt text](images/image-4.png)
 - Select Server-Sent Events as Type
 - Select a random ID
 - Select Name for the MCP Server
