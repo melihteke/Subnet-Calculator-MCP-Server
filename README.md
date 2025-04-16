@@ -34,7 +34,7 @@ python main.py
 
 ## How to add this Server to your MCP Client
 
-1. Goose MCP Client
+### Goose MCP Client
 - Click Menu and select Advanced settings:
 
 ![alt text](images/image.png)
@@ -48,5 +48,5 @@ python main.py
 ![alt text](images/image-2.png)
 
 
-2. Claude Desktop MCP Client
+### Claude Desktop MCP Client
 This part will be added later.
